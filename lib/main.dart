@@ -1,7 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:porchguard/view/base/base.dart';
 
-void main() {
+import 'package:porchguard/view/Sign_Up/signup.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Login UI',
+      debugShowCheckedModeBanner: false,
+      home: SignupScreen(),
+    );
+  }
+}
+/*void main() {
   runApp(MyApp());
 }
 
@@ -116,4 +131,4 @@ class MyApp extends StatelessWidget {
   //     ), // This trailing comma makes auto-formatting nicer for build methods.
   //   );
   // }
-//}
+//}*/
