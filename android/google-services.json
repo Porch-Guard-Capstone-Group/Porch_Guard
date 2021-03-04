@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "10901268294",
+    "project_id": "porchguard",
+    "storage_bucket": "porchguard.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10901268294:android:c8061bc437e6ca549a2747",
+        "android_client_info": {
+          "package_name": "com.porchguard.porchguard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10901268294-0ovqc9pktthbrmf0inuf22snv2rmkdq1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.porchguard.porchguard",
+            "certificate_hash": "496256a8cfa440c206177ae16a5ec4536de02972"
+          }
+        },
+        {
+          "client_id": "10901268294-elirkneq9cb8ibkmqjl2guikl15kivsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW26H4MBObUxWNlR4-eBRKEBEAgglfgdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10901268294-elirkneq9cb8ibkmqjl2guikl15kivsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
