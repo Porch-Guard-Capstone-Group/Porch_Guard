@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:porchguard/controller/authenticate.dart';
 import 'package:porchguard/view/Sign_Up/signup.dart';
 import 'package:porchguard/view/base/base.dart';
+import 'package:provider/provider.dart';
 import 'package:porchguard/view/utilities/constants.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -10,7 +13,10 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  final auth = FirebaseAuth.instance;
   bool _rememberMe = false;
+  String _email;
+  String _password;
 
   Widget _buildEmailTF() {
     return Column(
@@ -26,7 +32,13 @@ class _SignInScreenState extends State<SignInScreen> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
+
             keyboardType: TextInputType.emailAddress,
+            onChanged: (value){
+              setState(() {
+                _email =value;
+              });
+            },
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -61,7 +73,14 @@ class _SignInScreenState extends State<SignInScreen> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
+
             obscureText: true,
+            onChanged: (value){
+              setState(() {
+                _password =value;
+              });
+            },
+
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'OpenSans',
@@ -129,11 +148,14 @@ class _SignInScreenState extends State<SignInScreen> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () async {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Base()),
-          );
+        onPressed: (){
+
+          auth.signInWithEmailAndPassword(email: _email, password: _password);
+
+          // context.read<AuthenticationService>().signIn(
+          //   email: _email.trim(),
+          //   password: _password.trim(),
+          // );
         },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(

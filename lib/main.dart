@@ -1,22 +1,81 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:porchguard/controller/authenticate.dart';
 import 'package:porchguard/view/Sign_In/signin.dart';
 import 'package:porchguard/view/base/base.dart';
+import 'package:provider/provider.dart';
 
 import 'package:porchguard/view/Sign_Up/signup.dart';
+// Import the firebase_core plugin
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Login UI',
+      title: 'Porch Guard',
       debugShowCheckedModeBanner: false,
       home: SignInScreen(),
     );
   }
 }
+// // Import the firebase_core plugin
+// import 'package:firebase_core/firebase_core.dart';
+
+// void main() {
+//   runApp(App());
+// }
+//
+//
+// class App extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return FutureBuilder(
+//       // Initialize FlutterFire
+//       future: Firebase.initializeApp(),
+//       builder: (context, snapshot) {
+//         // Check for errors
+//         if (snapshot.hasError) {
+//           return SignInScreen();
+//         }
+//
+//         // Once complete, show your application
+//         if (snapshot.connectionState == ConnectionState.done) {
+//           return SignInScreen();
+//         }
+//
+//         // Otherwise, show something whilst waiting for initialization to complete
+//         return SignInScreen();
+//       },
+//     );
+//   }
+// }
+
+// class AuthenticationWrapper extends StatelessWidget {
+//   const AuthenticationWrapper({
+//     Key key,
+//   }):super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     final firebaseUser = context.watch<User>();
+//     if(firebaseUser != null){
+//       return Base();
+//     }
+//     return SignInScreen();
+//   }
+//
+// }
+
 /*void main() {
   runApp(MyApp());
 }
