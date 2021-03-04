@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:porchguard/view/Sign_In/signin.dart';
 import 'package:porchguard/view/utilities/constants.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -211,7 +212,12 @@ class _SignupScreenState extends State<SignupScreen> {
 
   Widget _buildSignInBtn() {
     return GestureDetector(
-      onTap: () => print('Sign In Button Pressed'),
+      onTap: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SignInScreen()),
+          );
+        },
       child: RichText(
         text: TextSpan(
           children: [
