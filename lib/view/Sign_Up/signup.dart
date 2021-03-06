@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:porchguard/controller/authenticate.dart';
+import 'package:provider/provider.dart';
 import 'package:porchguard/view/Sign_In/signin.dart';
 import 'package:porchguard/view/utilities/constants.dart';
+
+import '../../main.dart';
 
 class SignupScreen extends StatefulWidget {
   @override
@@ -9,6 +13,8 @@ class SignupScreen extends StatefulWidget {
 }
 class _SignupScreenState extends State<SignupScreen> {
   bool _rememberMe = false;
+  String _email;
+  String _password;
 
   Widget _buildNameTF() {
     return Column(
@@ -58,6 +64,11 @@ class _SignupScreenState extends State<SignupScreen> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
+            onChanged: (value){
+              setState(() {
+                _email =value;
+              });
+            },
             keyboardType: TextInputType.emailAddress,
             style: TextStyle(
               color: Colors.white,
@@ -128,6 +139,11 @@ class _SignupScreenState extends State<SignupScreen> {
           decoration: kBoxDecorationStyle,
           height: 60.0,
           child: TextField(
+            onChanged: (value){
+              setState(() {
+                _password =value;
+              });
+            },
             obscureText: true,
             style: TextStyle(
               color: Colors.white,
@@ -190,7 +206,13 @@ class _SignupScreenState extends State<SignupScreen> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => print('Register Button Pressed'),
+          onPressed: (){
+            context.read<AuthenticationService>().signUp(
+              email: _email.trim(),
+              password: _password.trim(),
+            );
+            Navigator.push(context, MaterialPageRoute(builder: (context) => AuthenticationWrapper()),);
+          },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
