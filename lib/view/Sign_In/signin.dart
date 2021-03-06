@@ -149,13 +149,12 @@ class _SignInScreenState extends State<SignInScreen> {
       child: RaisedButton(
         elevation: 5.0,
         onPressed: (){
+          //auth.signInWithEmailAndPassword(email: _email, password: _password);
 
-          auth.signInWithEmailAndPassword(email: _email, password: _password);
-
-          // context.read<AuthenticationService>().signIn(
-          //   email: _email.trim(),
-          //   password: _password.trim(),
-          // );
+          context.read<AuthenticationService>().signIn(
+            email: _email.trim(),
+            password: _password.trim(),
+          );
         },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
@@ -165,7 +164,7 @@ class _SignInScreenState extends State<SignInScreen> {
         child: Text(
           'LOGIN',
           style: TextStyle(
-            color: Color(0xFF527DAA),
+            color: Colors.blue,
             letterSpacing: 1.5,
             fontSize: 18.0,
             fontWeight: FontWeight.bold,
@@ -292,10 +291,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      Color(0xFF73AEF5),
-                      Color(0xFF61A4F1),
-                      Color(0xFF478DE0),
-                      Color(0xFF398AE5),
+                      Colors.blue,
+                      Colors.blue,
+                      Colors.blue,
+                      Colors.blue,
                     ],
                     stops: [0.1, 0.4, 0.7, 0.9],
                   ),
