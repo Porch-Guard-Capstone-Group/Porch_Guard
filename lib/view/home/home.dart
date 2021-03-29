@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:porchguard/controller/delivery_retrieve.dart';
 class Home extends StatefulWidget{
   @override
   _HomeState createState() => _HomeState();
@@ -56,6 +57,8 @@ class _HomeState extends State<Home>{
                       color: Colors.blue,
                       child: Text('TURN ON MOTION SENSOR', style: TextStyle(color: Colors.white, fontSize: 20,)),
                       onPressed: () async{
+                        DeliveryRetrieve().retrieve();
+                        print("Hello world");
                       },
                     ) ,
                   ),
