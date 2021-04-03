@@ -50,8 +50,10 @@ class _MyAppState extends State<MyApp>{
   }
 
   update(String token){
-    print("Token" + token);
+    print("Token: " + token);
     textValue = token;
+    DatabaseReference databaseReference = new FirebaseDatabase().reference();
+    databaseReference.child('fcm-token/ ${token}').set({"token":token});
     setState((){});
   }
   @override
