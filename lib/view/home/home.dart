@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:porchguard/controller/statemachine.dart';
 class Home extends StatefulWidget{
   @override
   _HomeState createState() => _HomeState();
@@ -19,7 +20,7 @@ class _HomeState extends State<Home>{
                     child:RaisedButton(
                       color: Colors.blue,
                       child: Text('TURN OFF ALARM', style: TextStyle(color: Colors.white, fontSize: 20,)),
-                      onPressed: () async{
+                      onPressed: () async { StateMachine().updateZero();
                       },
                     ) ,
                   ),
@@ -30,32 +31,8 @@ class _HomeState extends State<Home>{
                     height: 50,
                     child:RaisedButton(
                       color: Colors.blue,
-                      child: Text('TURN ON ALARM', style: TextStyle(color: Colors.white, fontSize: 20,)),
-                      onPressed: () async{
-                      },
-                    ) ,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top:50),
-                  child: ButtonTheme(
-                    height: 50,
-                    child:RaisedButton(
-                      color: Colors.blue,
-                      child: Text('TURN ON ACCELEROMETER', style: TextStyle(color: Colors.white, fontSize: 20,)),
-                      onPressed: () async{
-                      },
-                    ) ,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top:50),
-                  child: ButtonTheme(
-                    height: 50,
-                    child:RaisedButton(
-                      color: Colors.blue,
-                      child: Text('TURN ON MOTION SENSOR', style: TextStyle(color: Colors.white, fontSize: 20,)),
-                      onPressed: () async{
+                      child: Text('CONTINUE MONITORING', style: TextStyle(color: Colors.white, fontSize: 20,)),
+                      onPressed: () async { StateMachine().updateOne();
                       },
                     ) ,
                   ),
