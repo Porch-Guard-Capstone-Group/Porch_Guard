@@ -1,16 +1,12 @@
-# porchguard
+# PorchGuard
 
-A new Flutter application.
+A flutter application to control the PorchGuard system, to deter Porch Pirates.
 
-## Getting Started
+## How to download the code and run application in Android Studio?
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1) Download Android Studio, if not already installed.
+2) Download and install flutter 
+3) Clone using Git Bash "git clone https://github.com/Porch-Guard-Capstone-Group/Porch_Guard.git"
+4) Open application in Android Studio
+5) Open device using AVD manager, or connect personal Android device
+6) Select device you want to use, and select the main.dart file, and press run
