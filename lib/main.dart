@@ -8,6 +8,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_database/firebase_database.dart';
 
+
+final app = Firebase.initializeApp(
+  options: FirebaseOptions(
+    appId: '1:10901268294:android:c8061bc437e6ca549a2747',
+    apiKey: 'AIzaSyAW26H4MBObUxWNlR4-eBRKEBEAgglfgdc',
+    databaseURL: 'https://porchguard-default-rtdb.firebaseio.com/',
+  )
+);
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
